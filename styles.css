@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Arial", sans-serif;
+    overflow: hidden; /* Prevents scrollbars */
+    position: relative;
+  }
+  
+  /* Moving Background Image */
+  .background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("code\ \(2\).png") repeat;
+    background-size: 300px; /* Adjust this to make the image smaller */
+    opacity: 0.2; /* Slight transparency */
+    animation: moveBg 20s linear infinite;
+    z-index: -1;
+  }
+  
+  /* Background Movement Animation */
+  @keyframes moveBg {
+    0% { background-position: 0 0; }
+    100% { background-position: -500px -500px; } /* Moves diagonally */
+  }
+  
+  /* Loading Screen */
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 10s forwards;
+    z-index: 9999;
+  }
+  
+  /* Ensure the loading screen fully disappears */
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    99% { opacity: 0; visibility: visible; }
+    100% { opacity: 0; visibility: hidden; display: none; }
+  }
+  
+.logo-loading {
+  width: 500px; /* Increased size */
+  height: auto;
+  animation: logoFadeIn 2s ease-in-out, logoFadeOut 3s ease-in-out 5s forwards;
+}
+
+  
+  /* Fix: Ensure Main Content Becomes Visible */
+  #main-content {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 2s ease-in-out 10s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Fade in main content */
+  @keyframes fadeIn {
+    0% { opacity: 0; visibility: hidden; }
+    100% { opacity: 1; visibility: visible; }
+  }
+  
+  /* Logo Placement (Top Left) */
+  .logo {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  /* Title with White Glow */
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 0px 0px 20px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Projects Section */
+  .projects {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    perspective: 1000px;
+  }
+  
+  /* Project Container */
+  .project {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  /* Project Image */
+  .project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Hover Effects */
+  .project:hover {
+    background: rgba(0, 255, 0, 0.2);
+    transform: scale(1.1) rotateY(10deg) rotateX(5deg);
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.7);
+  }
+  
+  /* Footer Section */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  text-shadow: 0 0 10px white, 0 0 20px white; /* Glowing effect */
+}
