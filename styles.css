@@ -45,7 +45,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeOut 10s forwards;
+    animation: fadeOut 8s forwards;
     z-index: 9999;
   }
   
@@ -59,7 +59,7 @@ body {
 .logo-loading {
   width: 500px; /* Increased size */
   height: auto;
-  animation: logoFadeIn 2s ease-in-out, logoFadeOut 3s ease-in-out 5s forwards;
+  animation: logoFadeIn 2s ease-in-out, logoFadeOut 2s ease-in-out 4s forwards;
 }
 
   
